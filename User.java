@@ -37,7 +37,7 @@ abstract class User implements HasMenu{
 		return this.userName;
 	}
     
-	public void setPin(String passWord){
+	public void setPassWord(String passWord){
 		this.passWord = passWord;
 	}
 
