@@ -3,6 +3,7 @@ import java.util.Scanner;
 class Employee extends User{
 	
 	Resume resume = new Resume();
+	JobOpenings openings = new JobOpenings();
 
 	public Employee(){
 		this.userName = "John Doe";
@@ -38,7 +39,7 @@ class Employee extends User{
 		
 		System.out.println("0) Exit");
         System.out.println("1) Manage Resume");
-        System.out.println("2) Manage Saving Account");
+        System.out.println("2) Look Through Job Openings");
 		System.out.println("3) Change Password");
 
         System.out.println();
@@ -63,6 +64,6 @@ class Employee extends User{
 	}
 
 	public String getReport(){
-        return String.format("UserName: %s\nChecking: %s\nSaving: %s",userName, checking, savings);
+        return String.format("UserName: %s\nResume: %s\nCurrent Job: %s",userName, resume, openings);
 	}
 }	
