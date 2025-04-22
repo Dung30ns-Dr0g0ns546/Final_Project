@@ -8,15 +8,141 @@ abstract class Resume implements HasMenu{
     String education;
     String experience;
     String skills;
+    String certification;
 
-    public Resume(String name, String email, String phone, String education, String experience, String skills) {
+    public Resume(String name, String email, String phone, String education, String experience, String skills, String certification) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.education = education;
         this.experience = experience;
         this.skills = skills;
+        this.certification = certification;
     }
 
-    
+    public void displayResume() {
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Phone Number: " + phone);
+        System.out.println("Education: " + education);
+        System.out.println("Skills: " + skills);
+        System.out.println("Certifications: " + certification);
+    }
+
+    public String menu(){
+		Scanner input = new Scanner(System.in);
+
+        System.out.println("0) Exit This Menu");
+        System.out.println("1) Change Name");
+        System.out.println("2) Change Email");
+        System.out.println("3) Change Phone Number");
+        System.out.println("4) Change Education");
+        System.out.println("5) Change Skills");
+        System.out.println("6) Change Certifications");
+        System.out.println("7) Change Summary");
+
+        System.out.println();
+        System.out.println("Please enter 0-7: ");
+
+        String result = input.nextLine();
+        return result;
+    }
+
+    public void changeName(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Name: ");
+
+		String newName = input.nextLine();
+		
+		if (newName.equals(name)){
+			System.out.println("Incorrect. You have entered your current name. Try again.");
+		} else {
+			System.out.println("New name has been set.");
+		}
+	}
+
+    public void changeEmail(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Email Address: ");
+
+		String newEmail = input.nextLine();
+		
+		if (newEmail.equals(email)){
+			System.out.println("Incorrect. You have entered your current email address. Try again.");
+		} else {
+			System.out.println("New email address has been set.");
+		}
+	}
+
+    public void changePhone(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Phone Number: ");
+
+		String newPhone = input.nextLine();
+		
+		if (newPhone.equals(phone)){
+			System.out.println("Incorrect. You have entered your current phone number. Try again.");
+		} else {
+			System.out.println("New phone number has been set.");
+		}
+	}
+
+    public void changeEducation(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Education (seperate by comma): ");
+
+		String newEducation = input.nextLine();
+		
+		if (newEducation.equals(education)){
+			System.out.println("Incorrect. You have entered your current education. Try again.");
+		} else {
+			System.out.println("New education has been set.");
+		}
+	}
+
+    public void changeSkills(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Skills (seperate by comma): ");
+
+		String newSkills = input.nextLine();
+		
+		if (newSkills.equals(skills)){
+			System.out.println("Incorrect. You have entered your current skills. Try again.");
+		} else {
+			System.out.println("New skills has been set.");
+		}
+	}
+
+    public void changePassWord(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Password: ");
+
+		String newPassWord = input.nextLine();
+		
+		if (newPassWord.equals(passWord)){
+			System.out.println("Incorrect. You have entered your current password. Try again.");
+		} else {
+			System.out.println("New password has been set.");
+		}
+	}
+
+    public void changeName(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Name: ");
+
+		String newName = input.nextLine();
+		
+		if (newName.equals(name)){
+			System.out.println("Incorrect. You have entered your current name. Try again.");
+		} else {
+			System.out.println("New name has been set.");
+		}
+	}
 }	

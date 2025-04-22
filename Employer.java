@@ -1,12 +1,12 @@
 import java.util.*;
 import java.io.*;
 
-public class Employer extends User implements HasMenu , Serializable{
+public class Employer extends User implements HasMenu{
 
     public String menu(){
 		Scanner input = new Scanner(System.in);
 
-        System.out.println("0) Exit This Menus");
+        System.out.println("0) Exit This Menu");
         System.out.println("1) Full Employee Report");
         System.out.println("2) Add User");
         System.out.println("3) Remove User");
