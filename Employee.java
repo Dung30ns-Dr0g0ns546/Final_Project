@@ -22,9 +22,9 @@ class Employee extends User{
 			if (result.equals("0")){
 				keepGoing = false;
 			} else if (result.equals("1")){
-				
+				resume = new Resume();
 			} else if (result.equals("2")){
-				
+				openings = new JobOpenings();
 			} else if (result.equals("3")){
 				changePassWord();
 			} else {
