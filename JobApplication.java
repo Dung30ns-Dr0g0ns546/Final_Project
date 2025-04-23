@@ -20,7 +20,7 @@ public class JobApplication implements HasMenu {
 	}
 
 	public void saveEmployees(Employee employees){
-		employee.add(employee);
+		employee.add(employees);
         System.out.println("Employees saved: " + employee.getUserName());
 	}
 
@@ -95,8 +95,8 @@ public class JobApplication implements HasMenu {
 			if (result.equals("0")){
 				keepGoing = false;
 			} else if (result.equals("1")){
-				if (admin = true);
-				startEmployer();
+				if (employer = true);
+				loginAsEmployer();
 			} else if (result.equals("2")){
 			loginAsEmployee();
 		} else {
@@ -105,10 +105,10 @@ public class JobApplication implements HasMenu {
 		}
 	}
 
-	public void startAdmin(){
+	public void loginAsEmployer(){
 		boolean keepGoing = true;
 		while (keepGoing){
-			String response = admin.menu();
+			String response = employer.menu();
 			if (response.equals("0")){
 				keepGoing = false;
 			} else if(response.equals("1")){
