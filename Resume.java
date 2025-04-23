@@ -22,13 +22,43 @@ abstract class Resume implements HasMenu{
 		this.summary = summary;
     }
 
+	public void start(){
+        boolean keepGoing = true;
+		while (keepGoing){
+			String result = menu();
+				if (result.equals("0")){
+					keepGoing = false;
+				} else if (result.equals("1")){
+					changeName();
+				} else if (result.equals("2")){
+					changeEmail();
+				} else if (result.equals("3")){
+           			changePhone();
+        		} else if (result.equals("4")){
+					changeEducation();
+				} else if (result.equals("5")){
+					changeExperience();
+				} else if (result.equals("6")){
+					changeSkills();
+				} else if (result.equals("7")){
+					changeCertifications();
+				} else if (result.equals("8")){
+					changeSummary();
+				} else {
+					System.out.println("Please enter 0-8");
+			}
+		}
+    }
+
     public void displayResume() {
         System.out.println("Name: " + name);
         System.out.println("Email: " + email);
         System.out.println("Phone Number: " + phone);
         System.out.println("Education: " + education);
+		System.out.println("Experience: " + experience);
         System.out.println("Skills: " + skills);
         System.out.println("Certifications: " + certification);
+		System.out.println("Summary: " + summary);
     }
 
     public String menu(){
@@ -39,12 +69,13 @@ abstract class Resume implements HasMenu{
         System.out.println("2) Change Email");
         System.out.println("3) Change Phone Number");
         System.out.println("4) Change Education");
-        System.out.println("5) Change Skills");
-        System.out.println("6) Change Certifications");
-        System.out.println("7) Change Summary");
+		System.out.println("5) Change Experience");
+        System.out.println("6) Change Skills");
+        System.out.println("7) Change Certifications");
+        System.out.println("8) Change Summary");
 
         System.out.println();
-        System.out.println("Please enter 0-7: ");
+        System.out.println("Please enter 0-8: ");
 
         String result = input.nextLine();
         return result;
@@ -103,6 +134,20 @@ abstract class Resume implements HasMenu{
 			System.out.println("Incorrect. You have entered your current education. Try again.");
 		} else {
 			System.out.println("New education has been set.");
+		}
+	}
+
+	public void changeExperience(){
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter New Experiences (seperate by comma): ");
+
+		String newExperiences = input.nextLine();
+		
+		if (newExperiences.equals(experience)){
+			System.out.println("Incorrect. You have entered your current expereinces. Try again.");
+		} else {
+			System.out.println("New experiences has been set.");
 		}
 	}
 
