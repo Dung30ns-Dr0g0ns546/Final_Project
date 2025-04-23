@@ -22,9 +22,6 @@ public class Employer extends User implements HasMenu{
         
     }
 
-
-
-
     public String getReport(){
         return String.format("UserName: %s\nPassword: %s\n",userName,passWord);
     }
