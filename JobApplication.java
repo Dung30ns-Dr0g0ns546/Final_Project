@@ -7,7 +7,6 @@ public class JobApplication implements HasMenu {
 
 	private ArrayList<Employee> employees = new ArrayList<>();
 
-
 	public static void main(String[] args){
 		new JobApplication();
 	}
@@ -44,14 +43,14 @@ public class JobApplication implements HasMenu {
 	public void addUser(){
 		if (employees != null) {
 			employees.add(employees);
-			System.out.println("User " + user.getUserName() + " added successfully.");
+			System.out.println("Employee " + employees.getUserName() + " added successfully.");
 	   } else {
-		   System.out.println("Invalid user data. Cannot add to bank.");
+		   System.out.println("Invalid user data. Cannot add to rooster.");
 	   }
     }
 
-	public void removeUser(){
-		
+	public void removeUser(String userName){
+		employees.remove(userName);
 	}
 
 	public String menu(){
@@ -98,9 +97,9 @@ public class JobApplication implements HasMenu {
 				if (employer = true);
 				loginAsEmployer();
 			} else if (result.equals("2")){
-			loginAsEmployee();
-		} else {
-			System.out.println("Please enter 0-2");
+				loginAsEmployee();
+			} else {
+				System.out.println("Please enter 0-2");
 			}
 		}
 	}
@@ -115,7 +114,7 @@ public class JobApplication implements HasMenu {
 				System.out.println("Full Employee Report");
 				this.fullEmployeeReport();
 			} else if (response.equals("2")){
-				System.out.println("Add user");
+				System.out.println("Add User");
 				this.addUser();
 			} else if (response.equals("3")){
 				System.out.println("Remove User");
