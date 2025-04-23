@@ -9,8 +9,9 @@ abstract class Resume implements HasMenu{
     String experience;
     String skills;
     String certification;
+	String summary;
 
-    public Resume(String name, String email, String phone, String education, String experience, String skills, String certification) {
+    public Resume(String name, String email, String phone, String education, String experience, String skills, String certification, String summary) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -18,6 +19,7 @@ abstract class Resume implements HasMenu{
         this.experience = experience;
         this.skills = skills;
         this.certification = certification;
+		this.summary = summary;
     }
 
     public void displayResume() {
@@ -118,31 +120,31 @@ abstract class Resume implements HasMenu{
 		}
 	}
 
-    public void changePassWord(){
+    public void changeCertifications(){
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Enter New Password: ");
+		System.out.println("Enter New Certifications: ");
 
-		String newPassWord = input.nextLine();
+		String newCertifications = input.nextLine();
 		
-		if (newPassWord.equals(passWord)){
-			System.out.println("Incorrect. You have entered your current password. Try again.");
+		if (newCertifications.equals(certification)){
+			System.out.println("Incorrect. You have entered your current certification. Try again.");
 		} else {
-			System.out.println("New password has been set.");
+			System.out.println("New certifications has been set.");
 		}
 	}
 
-    public void changeName(){
+    public void changeSummary(){
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Enter New Name: ");
+		System.out.println("Enter New Summary: ");
 
-		String newName = input.nextLine();
+		String newSummary = input.nextLine();
 		
-		if (newName.equals(name)){
-			System.out.println("Incorrect. You have entered your current name. Try again.");
+		if (newSummary.equals(summary)){
+			System.out.println("Incorrect. You have entered your current summary. Try again.");
 		} else {
-			System.out.println("New name has been set.");
+			System.out.println("New summary has been set.");
 		}
 	}
 }	
