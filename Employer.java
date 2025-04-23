@@ -10,9 +10,10 @@ public class Employer extends User implements HasMenu{
         System.out.println("1) Full Employee Report");
         System.out.println("2) Add User");
         System.out.println("3) Remove User");
+        System.out.println("4) Post Job Opening");
 
         System.out.println();
-        System.out.println("Please enter 0-3: ");
+        System.out.println("Please enter 0-4: ");
 
         String result = input.nextLine();
         return result;

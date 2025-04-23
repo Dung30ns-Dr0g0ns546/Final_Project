@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CheckingAccount implements HasMenu{
+public class JobOpenings implements HasMenu{
 
     double balance; 
 

@@ -2,68 +2,64 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Bank implements HasMenu {
-	Admin admin = new Admin();
+public class JobApplication implements HasMenu {
+	Employer employer = new Employer();
 
-	private ArrayList<Customer> customers = new ArrayList<>();
+	private ArrayList<Employee> employees = new ArrayList<>();
 
 
 	public static void main(String[] args){
-		new Bank();
+		new JobApplication();
 	}
 
-	public Bank(){
-		//this.loadSampleCustomers();
-		//this.saveCustomers();
-		this.loadCustomers();
+	public JobApplication(){
+		this.loadEmployees();
 		this.start();
-		this.saveCustomers();
+		this.saveEmployees();
 
 	}
 
-	public void saveCustomers(Customer customer){
-		customers.add(customer);
-        System.out.println("Customer saved: " + customer.getUserName());
+	public void saveEmployees(Employee employees){
+		employee.add(employee);
+        System.out.println("Employees saved: " + employee.getUserName());
 	}
 
-	public void loadCustomers(){
-		customers.add(new Customer("Alice", "1234"));
-		customers.add(new Customer("Bob", "5678"));
-		customers.add(new Customer("Cindy", "2468"));
+	public void loadEmployees(){
+		employee.add(new Employee("Alice", "ABCD"));
+		employee.add(new Employee("Bob", "EFGH"));
+		employee.add(new Employee("Cindy", "IJKL"));
 
 	}
 
-	public void fullCustomerReport(){
-		if (customers.isEmpty()) {
-            System.out.println("No customers found.");
+	public void fullEmployeeReport(){
+		if (employees.isEmpty()) {
+            System.out.println("No employees found.");
         } else {
-            for (Customer customer : customers) {
-                System.out.println(customer);
+            for (Employee employee : employees) {
+                System.out.println(employees);
             }
         }
 	}
 
 	public void addUser(){
-		if (customers != null) {
-			customers.add(customers);
+		if (employees != null) {
+			employees.add(employees);
 			System.out.println("User " + user.getUserName() + " added successfully.");
 	   } else {
 		   System.out.println("Invalid user data. Cannot add to bank.");
 	   }
     }
 
-	public void applyInterest(){
-		//For loop that goes through every customer and applys interest to it's savings account 
-		double interest = balance * interestRate;
-        balance += interest;
+	public void removeUser(){
+		
 	}
 
 	public String menu(){
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("0) Exit System");
-        System.out.println("1) Login as Admin");
-        System.out.println("2) Login as Customer");
+        System.out.println("1) Login as Employer");
+        System.out.println("2) Login as Employee");
 
         System.out.println();
         System.out.println("Please enter 0-2: ");
@@ -72,22 +68,22 @@ public class Bank implements HasMenu {
         return result;
 	}
 
-	public void loginAsCustomer(){
+	public void loginAsEmployee(){
 		Scanner input = new Scanner(System.in);
 
 		System.out.print("User Name: ");
 		String userNameIn = input.nextLine();
-		System.out.print("PIN: ");
-		String pinIn = input.nextLine();
+		System.out.print("Password: ");
+		String passWordIn = input.nextLine();
 
-		Customer currentCustomer = null;
-		for (Customer customer: customers){
-			if (customer.login(userNameIn, pinIn)){
-				currentCustomer = customer;
+		Customer currentEmployee = null;
+		for (Employee employee: employees){
+			if (employee.login(userNameIn, passWordIn)){
+				currentEmployee = employee;
 			}
 		}
 
-		if (currentCustomer == null){
+		if (currentEmployee == null){
 			System.out.println();
 		}
 	}
@@ -100,9 +96,9 @@ public class Bank implements HasMenu {
 				keepGoing = false;
 			} else if (result.equals("1")){
 				if (admin = true);
-				startAdmin();
+				startEmployer();
 			} else if (result.equals("2")){
-			loginAsCustomer();
+			loginAsEmployee();
 		} else {
 			System.out.println("Please enter 0-2");
 			}
@@ -116,16 +112,19 @@ public class Bank implements HasMenu {
 			if (response.equals("0")){
 				keepGoing = false;
 			} else if(response.equals("1")){
-				System.out.println("Full Customer Report");
-				this.fullCustomerReport();
+				System.out.println("Full Employee Report");
+				this.fullEmployeeReport();
 			} else if (response.equals("2")){
 				System.out.println("Add user");
 				this.addUser();
 			} else if (response.equals("3")){
-				System.out.println("Apply Interest");
-				this.applyInterest();
+				System.out.println("Remove User");
+				this.removeUser();
+			} else if (response.equals("4")){
+				System.out.println("Post Job Opening");
+				this.postJobOpening();
 			} else {
-				System.out.println("Please enter 0-3");
+				System.out.println("Please enter 0-4");
 			}
 		}
 	}
