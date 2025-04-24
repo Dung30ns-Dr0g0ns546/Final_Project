@@ -58,21 +58,12 @@ class Resume implements HasMenu{
 				} else if (result.equals("9")){
 					displayResume();
 				} else {
-					System.out.println("Please enter 0-8");
+					System.out.println("Please enter 0-9");
 			}
 		}
     }
 
-    public void displayResume() {
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("Phone Number: " + phone);
-        System.out.println("Education: " + education);
-		System.out.println("Experience: " + experience);
-        System.out.println("Skills: " + skills);
-        System.out.println("Certifications: " + certification);
-		System.out.println("Summary: " + summary);
-    }
+
 
     public String menu(){
 		Scanner input = new Scanner(System.in);
@@ -206,4 +197,15 @@ class Resume implements HasMenu{
 			System.out.println("New summary has been set.");
 		}
 	}
+	
+	public void displayResume() {
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Phone Number: " + phone);
+        System.out.println("Education: " + education);
+		System.out.println("Experience: " + experience);
+        System.out.println("Skills: " + skills);
+        System.out.println("Certifications: " + certification);
+		System.out.println("Summary: " + summary);
+    }
 }	
