@@ -7,8 +7,6 @@ public class JobApplication implements HasMenu {
 
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 
-	
-
 	public static void main(String[] args){
 		new JobApplication();
 	}
@@ -118,6 +116,21 @@ public class JobApplication implements HasMenu {
 				System.out.println("Please enter 0-2");
 			}
 		}
+	}
+
+	public void postJobOpening(){
+	JobOpening jobOpening = new JobOpening();
+
+
+    System.out.println("Posting a new job opening...");
+    jobOpening.start();
+
+    System.out.println("Job posted successfully!");
+    System.out.println("Job Title: " + jobOpening.getTitle());
+    System.out.println("Job Description: " + jobOpening.getDescription());
+    System.out.println("Job Requirements: " + jobOpening.getRequirements());
+    System.out.println("Spots Available: " + jobOpening.getSpotsAvailable());
+    System.out.println("Salary: " + jobOpening.getSalary());
 	}
 
 	public void loginAsEmployer(){
