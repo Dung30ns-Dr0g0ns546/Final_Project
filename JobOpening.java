@@ -12,8 +12,8 @@ public class JobOpening implements HasMenu {
 		this.title = "";
 		this.description = "";
 		this.requirements = "";
-		this.spotsAvailable = Integer.parseInt("");
-		this.salary = Double.parseDouble("");
+		this.spotsAvailable = 0;
+		this.salary = 0.0;
 	}
 
     public JobOpening(String title, String description, String requirements, int spotsAvailable, double salary) {
