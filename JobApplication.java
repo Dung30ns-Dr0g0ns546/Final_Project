@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class JobApplication implements HasMenu {
 	Employer employer = new Employer();
 
-	private ArrayList<Employee> employees = new ArrayList<>();
+	private ArrayList<Employee> employees = new ArrayList<Employee>();
+
+	
 
 	public static void main(String[] args){
 		new JobApplication();
@@ -18,9 +20,10 @@ public class JobApplication implements HasMenu {
 
 	}
 
-	public void saveEmployees(Employee employees){
-		employees.add(employees);
-        System.out.println("Employees saved: " + employees.getUserName());
+	public void saveEmployees(){
+		for (Employee employee : employees) {
+			System.out.println("Employee saved: " + employee.getUserName());
+		}
 	}
 
 	public void loadEmployees(){
@@ -32,26 +35,38 @@ public class JobApplication implements HasMenu {
 
 	public void fullEmployeeReport(){
 		if (employees.isEmpty()) {
-            System.out.println("No employees found.");
-        } else {
-            for (Employee employee : employees) {
-                System.out.println(employees);
-            }
-        }
+			System.out.println("No employees found.");
+		} else {
+			for (Employee employee : employees) {
+				System.out.println("Name: " + employee.getUserName());
+			}
+		}
 	}
 
 	public void addUser(){
-		if (employees != null) {
-			employees.add(employees);
-			System.out.println("Employee " + employees.getUserName() + " added successfully.");
-	   } else {
-		   System.out.println("Invalid user data. Cannot add to rooster.");
-	   }
-    }
+		Scanner input = new Scanner(System.in);
 
-	public void removeUser(String userName){
-		employees.remove(userName);
+		System.out.print("Enter Username: ");
+		String name = input.nextLine();
+		System.out.print("Enter Password: ");
+		String password = input.nextLine();
+		Employee newEmployee = new Employee(name, password);
+		employees.add(newEmployee);
+		System.out.println("Employee " + name + " added successfully.");
 	}
+
+	public void removeUser(){
+	    Scanner input = new Scanner(System.in);
+
+    	System.out.print("Enter Username to remove: ");
+    	String userName = input.nextLine();
+    	boolean removed = employees.removeIf(e -> e.getUserName().equals(userName));
+    	if (removed) {
+        	System.out.println("Employee " + userName + " removed.");
+    	} else {
+        	System.out.println("Employee not found.");
+    	}
+}
 
 	public String menu(){
 		Scanner input = new Scanner(System.in);
@@ -69,21 +84,23 @@ public class JobApplication implements HasMenu {
 
 	public void loginAsEmployee(){
 		Scanner input = new Scanner(System.in);
-
 		System.out.print("User Name: ");
 		String userNameIn = input.nextLine();
 		System.out.print("Password: ");
 		String passWordIn = input.nextLine();
-
+	
 		Employee currentEmployee = null;
-		for (Employee employee: employees){
-			if (employees.login(userNameIn, passWordIn)){
-				currentEmployee = employees;
+		for (Employee employee : employees) {
+			if (employee.login(userNameIn, passWordIn)) {
+				currentEmployee = employee;
+				break;
 			}
 		}
-
-		if (currentEmployee = null){
-			System.out.println();
+	
+		if (currentEmployee != null) {
+			System.out.println("Login successful. Welcome, " + currentEmployee.getUserName());
+		} else {
+			System.out.println("Login failed. Please check your credentials.");
 		}
 	}
 
@@ -94,7 +111,6 @@ public class JobApplication implements HasMenu {
 			if (result.equals("0")){
 				keepGoing = false;
 			} else if (result.equals("1")){
-				if (employer == true);
 				loginAsEmployer();
 			} else if (result.equals("2")){
 				loginAsEmployee();

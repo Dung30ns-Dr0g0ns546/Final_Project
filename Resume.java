@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-abstract class Resume implements HasMenu{
+class Resume implements HasMenu{
     
     String name;
     String email;
