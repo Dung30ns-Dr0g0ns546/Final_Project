@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Employee extends User implements HasMenu {
 	
-	private Resume resume = new Resume("John Doe", "john@example.com", "1234567890", "Education", "Experience", "Skills", "Certifications", "Summary");;
+	private Resume resume = new Resume("John Doe", "john@example.com", "1234567890", "Education", "Experience", "Skills", "Certifications", "Summary");
 	
 	private JobOpening openings = new JobOpening();
 
