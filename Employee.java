@@ -7,8 +7,8 @@ class Employee extends User implements HasMenu {
 	private static final Scanner input = new Scanner(System.in);
 
 	public Employee(){
-		this.userName = "John Doe";
-		this.passWord = "ABCD";
+		this.userName = "";
+		this.passWord = "";
 	}
 
 	public Employee(String userName, String passWord){
