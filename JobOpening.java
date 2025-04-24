@@ -6,14 +6,14 @@ public class JobOpening implements HasMenu {
     String description;
     String requirements;
     int spotsAvailable;
-    double salary;
+    double salary ;
 
     public JobOpening() {
 		this.title = "";
 		this.description = "";
 		this.requirements = "";
-		this.spotsAvailable = "";
-		this.salary = "";
+		this.spotsAvailable = Integer.parseInt("");
+		this.salary = Double.parseDouble("");
 	}
 
     public JobOpening(String title, String description, String requirements, int spotsAvailable, double salary) {
@@ -164,7 +164,7 @@ public class JobOpening implements HasMenu {
 		if (newSpotsAvailable.equals(spotsAvailable)){
 			System.out.println("Incorrect. You have entered this job's current spots that are available. Try again.");
 		} else {
-            this.spotsAvailable = newSpotsAvailable;
+            this.spotsAvailable = Integer.parseInt(newSpotsAvailable);
 			System.out.println("New job spots has been set.");
 		}
 	}
@@ -180,7 +180,7 @@ public class JobOpening implements HasMenu {
 		if (newSalary.equals(salary)){
 			System.out.println("Incorrect. You have entered this job's current salary. Try again.");
 		} else {
-            this.salary = newSalary;
+            this.salary = Double.parseDouble(newSalary);
 			System.out.println("New job salary has been set.");
 		}
 	}

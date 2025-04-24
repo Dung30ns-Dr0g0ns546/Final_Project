@@ -1,4 +1,4 @@
-JobApplication.class: JobApplication.java HasMenu.class
+JobApplication.class: JobApplication.java HasMenu.class HasMenu.class Employee.class Employer.class Resume.class User.class JobOpening.class 
 	javac -g JobApplication.java
 
 HasMenu.class: HasMenu.java
