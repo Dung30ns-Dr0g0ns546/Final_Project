@@ -12,14 +12,14 @@ class Resume implements HasMenu{
 	String summary;
 
 	public Resume() {
-		this.name = "";
-		this.email = "";
-		this.phone = "";
-		this.education = "";
-		this.experience = "";
-		this.skills = "";
-		this.certification = "";
-		this.summary = "";
+		this.name = "Alice LeMange";
+		this.email = "alice.lemange@business.com";
+		this.phone = "(317) 203-1982";
+		this.education = "None";
+		this.experience = "None";
+		this.skills = "None";
+		this.certification = "None";
+		this.summary = "None";
 	}
 
     public Resume(String name, String email, String phone, String education, String experience, String skills, String certification, String summary) {
@@ -96,6 +96,7 @@ class Resume implements HasMenu{
 		if (newName.equals(name)){
 			System.out.println("Incorrect. You have entered your current name. Try again.");
 		} else {
+			this.name = newName;
 			System.out.println("New name has been set.");
 		}
 	}
@@ -110,6 +111,7 @@ class Resume implements HasMenu{
 		if (newEmail.equals(email)){
 			System.out.println("Incorrect. You have entered your current email address. Try again.");
 		} else {
+			this.email = newEmail;
 			System.out.println("New email address has been set.");
 		}
 	}
@@ -124,6 +126,7 @@ class Resume implements HasMenu{
 		if (newPhone.equals(phone)){
 			System.out.println("Incorrect. You have entered your current phone number. Try again.");
 		} else {
+			this.phone = newPhone;
 			System.out.println("New phone number has been set.");
 		}
 	}
@@ -138,6 +141,7 @@ class Resume implements HasMenu{
 		if (newEducation.equals(education)){
 			System.out.println("Incorrect. You have entered your current education. Try again.");
 		} else {
+			this.education = newEducation;
 			System.out.println("New education has been set.");
 		}
 	}
@@ -152,6 +156,7 @@ class Resume implements HasMenu{
 		if (newExperiences.equals(experience)){
 			System.out.println("Incorrect. You have entered your current expereinces. Try again.");
 		} else {
+			this.experience = newExperiences;
 			System.out.println("New experiences has been set.");
 		}
 	}
@@ -166,6 +171,7 @@ class Resume implements HasMenu{
 		if (newSkills.equals(skills)){
 			System.out.println("Incorrect. You have entered your current skills. Try again.");
 		} else {
+			this.skills = newSkills;
 			System.out.println("New skills has been set.");
 		}
 	}
@@ -180,6 +186,7 @@ class Resume implements HasMenu{
 		if (newCertifications.equals(certification)){
 			System.out.println("Incorrect. You have entered your current certification. Try again.");
 		} else {
+			this.certification = newCertifications;
 			System.out.println("New certifications has been set.");
 		}
 	}
@@ -194,6 +201,7 @@ class Resume implements HasMenu{
 		if (newSummary.equals(summary)){
 			System.out.println("Incorrect. You have entered your current summary. Try again.");
 		} else {
+			this.summary = newSummary;
 			System.out.println("New summary has been set.");
 		}
 	}
