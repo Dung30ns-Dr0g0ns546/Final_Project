@@ -11,6 +11,17 @@ class Resume implements HasMenu{
     String certification;
 	String summary;
 
+	public Resume() {
+		this.name = "";
+		this.email = "";
+		this.phone = "";
+		this.education = "";
+		this.experience = "";
+		this.skills = "";
+		this.certification = "";
+		this.summary = "";
+	}
+
     public Resume(String name, String email, String phone, String education, String experience, String skills, String certification, String summary) {
         this.name = name;
         this.email = email;

@@ -31,13 +31,13 @@ public class JobApplication implements HasMenu {
 
 	}
 
-	public void fullEmployeeReport(){
-		if (employees.isEmpty()) {
-			System.out.println("No employees found.");
-		} else {
-			for (Employee employee : employees) {
-				System.out.println("Name: " + employee.getUserName());
-			}
+	public void fullEmployeeReport() {
+        if (employees.isEmpty()) {
+            System.out.println("No employees found.");
+        } else {
+            for (Employee employee : employees) {
+                System.out.println("Name: " + employee.getUserName());
+            }
 		}
 	}
 

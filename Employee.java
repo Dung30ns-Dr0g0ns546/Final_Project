@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 class Employee extends User implements HasMenu {
 	
-	private Resume resume = new Resume("John Doe", "john@example.com", "1234567890", "Education", "Experience", "Skills", "Certifications", "Summary");
-	
+	private Resume resume = new Resume();
 	private JobOpening openings = new JobOpening();
+	private static final Scanner input = new Scanner(System.in);
 
 	public Employee(){
 		this.userName = "John Doe";
@@ -16,6 +16,10 @@ class Employee extends User implements HasMenu {
 		this.passWord = passWord;
 	}
 
+	public boolean login(String userName, String passWord) {
+        return this.userName.equals(userName) && this.passWord.equals(passWord);
+    }
+
 	public void start(){
 		boolean keepGoing = true;
 		while (keepGoing){
@@ -23,7 +27,7 @@ class Employee extends User implements HasMenu {
 			if (result.equals("0")){
 				keepGoing = false;
 			} else if (result.equals("1")){
-				resume = new Resume();
+				resume.start();
 			} else if (result.equals("2")){
 				openings = new JobOpening();
 			} else if (result.equals("3")){
