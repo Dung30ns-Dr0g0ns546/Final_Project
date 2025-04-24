@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class JobOpenings implements HasMenu{
+public class JobOpening implements HasMenu {
 
     String title;
     String description;
@@ -136,7 +136,8 @@ public class JobOpenings implements HasMenu{
 
 		System.out.println("Enter Spots Available: ");
 
-		String newSpotsAvailable = input.nextInt();
+		int iSpotsAvailable = input.nextInt();
+        String newSpotsAvailable = String.valueOf(iSpotsAvailable);
 		
 		if (newSpotsAvailable.equals(spotsAvailable)){
 			System.out.println("Incorrect. You have entered this job's current spots that are available. Try again.");
@@ -150,7 +151,8 @@ public class JobOpenings implements HasMenu{
 
 		System.out.println("Enter Job Salary: ");
 
-		String newSalary = input.nextDouble();
+		double dSalary = input.nextDouble();
+        String newSalary = Double.toString(dSalary);
 		
 		if (newSalary.equals(salary)){
 			System.out.println("Incorrect. You have entered this job's current salary. Try again.");

@@ -19,14 +19,14 @@ public class JobApplication implements HasMenu {
 	}
 
 	public void saveEmployees(Employee employees){
-		employee.add(employees);
-        System.out.println("Employees saved: " + employee.getUserName());
+		employees.add(employees);
+        System.out.println("Employees saved: " + employees.getUserName());
 	}
 
 	public void loadEmployees(){
-		employee.add(new Employee("Alice", "ABCD"));
-		employee.add(new Employee("Bob", "EFGH"));
-		employee.add(new Employee("Cindy", "IJKL"));
+		employees.add(new Employee("Alice", "ABCD"));
+		employees.add(new Employee("Bob", "EFGH"));
+		employees.add(new Employee("Cindy", "IJKL"));
 
 	}
 
@@ -75,14 +75,14 @@ public class JobApplication implements HasMenu {
 		System.out.print("Password: ");
 		String passWordIn = input.nextLine();
 
-		Customer currentEmployee = null;
+		Employee currentEmployee = null;
 		for (Employee employee: employees){
-			if (employee.login(userNameIn, passWordIn)){
-				currentEmployee = employee;
+			if (employees.login(userNameIn, passWordIn)){
+				currentEmployee = employees;
 			}
 		}
 
-		if (currentEmployee == null){
+		if (currentEmployee = null){
 			System.out.println();
 		}
 	}
@@ -94,7 +94,7 @@ public class JobApplication implements HasMenu {
 			if (result.equals("0")){
 				keepGoing = false;
 			} else if (result.equals("1")){
-				if (employer = true);
+				if (employer == true);
 				loginAsEmployer();
 			} else if (result.equals("2")){
 				loginAsEmployee();

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 abstract class User implements HasMenu{
 
 	String userName; 
@@ -6,6 +8,7 @@ abstract class User implements HasMenu{
 	public boolean login(){
 		boolean output = false;
 		Scanner input = new Scanner(System.in);
+
 		System.out.println("Please input username.");
 		String userNameResult = input.nextLine();
 

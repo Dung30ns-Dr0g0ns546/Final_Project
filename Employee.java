@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-class Employee extends User{
+class Employee extends User implements HasMenu {
 	
-	Resume resume = new Resume();
-	JobOpenings openings = new JobOpenings();
+	private Resume resume = new Resume();
+	private JobOpening openings = new JobOpening();
 
 	public Employee(){
 		this.userName = "John Doe";
@@ -24,7 +24,7 @@ class Employee extends User{
 			} else if (result.equals("1")){
 				resume = new Resume();
 			} else if (result.equals("2")){
-				openings = new JobOpenings();
+				openings = new JobOpening();
 			} else if (result.equals("3")){
 				changePassWord();
 			} else {
@@ -48,6 +48,14 @@ class Employee extends User{
         String result = input.nextLine();
         return result;
 	}
+
+	public String getUserName(){
+        return this.userName;
+    }
+
+    public void setUserName(String userName){
+        this.userName = userName;
+    }
 
 	public void changePassWord(){
 		Scanner input = new Scanner(System.in);
