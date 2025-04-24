@@ -185,7 +185,7 @@ public class JobOpening implements HasMenu {
 		}
 	}
 
-    public void displayResume() {
+    public void displayJobOpening() {
         System.out.println("Title: " + title);
         System.out.println("Description: " + description);
         System.out.println("Requirements: " + requirements);
