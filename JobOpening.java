@@ -8,6 +8,22 @@ public class JobOpening implements HasMenu {
     int spotsAvailable;
     double salary;
 
+    public JobOpening() {
+		this.title = "";
+		this.description = "";
+		this.requirements = "";
+		this.spotsAvailable = "";
+		this.salary = "";
+	}
+
+    public JobOpening(String title, String description, String requirements, int spotsAvailable, double salary) {
+        this.title = title;
+        this.description = description;
+        this.requirements = requirements;
+        this.spotsAvailable = spotsAvailable;
+        this.salary = salary;
+    }
+
 
     public String menu(){
         Scanner input = new Scanner(System.in);
@@ -18,9 +34,10 @@ public class JobOpening implements HasMenu {
         System.out.println("3) Add Job Requirements");
         System.out.println("4) Add Spots Available");
         System.out.println("5) Add Job Salary");
+        System.out.println("6) View Job Opening");
 
         System.out.println();
-        System.out.println("Please enter 0-5: ");
+        System.out.println("Please enter 0-6: ");
 
         String result = input.nextLine();
         return result;
@@ -43,11 +60,13 @@ public class JobOpening implements HasMenu {
 			    addSpotsAvailable();
 			} else if (result.equals("5")){
                 addJobSalary();
+            } else if (result.equals("6")){
+                displayJobOpening();
             } else {
                 System.out.println("Please enter 0-5");
             }
 		}
-    }
+      }
 
     public String getTitle(){
         return this.title;
@@ -99,6 +118,7 @@ public class JobOpening implements HasMenu {
 		if (newTitle.equals(title)){
 			System.out.println("Incorrect. You have entered this job's current title. Try again.");
 		} else {
+            this.title = newTitle;
 			System.out.println("New job title has been set.");
 		}
 	}
@@ -113,6 +133,7 @@ public class JobOpening implements HasMenu {
 		if (newDescription.equals(description)){
 			System.out.println("Incorrect. You have entered this job's current description. Try again.");
 		} else {
+            this.description = newDescription;
 			System.out.println("New job description has been set.");
 		}
 	}
@@ -127,6 +148,7 @@ public class JobOpening implements HasMenu {
 		if (newRequirement.equals(requirements)){
 			System.out.println("Incorrect. You have entered this job's current requirements. Try again.");
 		} else {
+            this.requirements = newRequirement;
 			System.out.println("New job requirements has been set.");
 		}
 	}
@@ -142,6 +164,7 @@ public class JobOpening implements HasMenu {
 		if (newSpotsAvailable.equals(spotsAvailable)){
 			System.out.println("Incorrect. You have entered this job's current spots that are available. Try again.");
 		} else {
+            this.spotsAvailable = newSpotsAvailable;
 			System.out.println("New job spots has been set.");
 		}
 	}
@@ -157,8 +180,17 @@ public class JobOpening implements HasMenu {
 		if (newSalary.equals(salary)){
 			System.out.println("Incorrect. You have entered this job's current salary. Try again.");
 		} else {
+            this.salary = newSalary;
 			System.out.println("New job salary has been set.");
 		}
 	}
+
+    public void displayResume() {
+        System.out.println("Title: " + title);
+        System.out.println("Description: " + description);
+        System.out.println("Requirements: " + requirements);
+        System.out.println("Spots Available: " + spotsAvailable);
+		System.out.println("Salary: " + salary);
+    }
 
 }
