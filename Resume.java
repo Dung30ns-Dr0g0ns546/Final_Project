@@ -12,14 +12,14 @@ class Resume implements HasMenu{
 	String summary;
 
 	public Resume() {
-		this.name = "Alice LeMange";
-		this.email = "alice.lemange@business.com";
-		this.phone = "(317) 203-1982";
-		this.education = "None";
-		this.experience = "None";
-		this.skills = "None";
-		this.certification = "None";
-		this.summary = "None";
+		this.name = "";
+		this.email = "";
+		this.phone = "";
+		this.education = "";
+		this.experience = "";
+		this.skills = "";
+		this.certification = "";
+		this.summary = "";
 	}
 
     public Resume(String name, String email, String phone, String education, String experience, String skills, String certification, String summary) {
