@@ -11,7 +11,7 @@ class Employee extends User implements HasMenu {
 		this.passWord = "ABCD";
 	}
 
-	public Employee(String usernName, String passWord){
+	public Employee(String userName, String passWord){
 		this.userName = userName;
 		this.passWord = passWord;
 	}

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class JobApplication implements HasMenu {
 	Employer employer = new Employer();
+	Employee employee = new Employee();
 
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 
@@ -97,6 +98,7 @@ public class JobApplication implements HasMenu {
 	
 		if (currentEmployee != null) {
 			System.out.println("Login successful. Welcome, " + currentEmployee.getUserName());
+			employee.start();
 		} else {
 			System.out.println("Login failed. Please check your credentials.");
 		}

@@ -55,6 +55,8 @@ class Resume implements HasMenu{
 					changeCertifications();
 				} else if (result.equals("8")){
 					changeSummary();
+				} else if (result.equals("9")){
+					displayResume();
 				} else {
 					System.out.println("Please enter 0-8");
 			}
@@ -84,9 +86,10 @@ class Resume implements HasMenu{
         System.out.println("6) Change Skills");
         System.out.println("7) Change Certifications");
         System.out.println("8) Change Summary");
+		System.out.println("9) Display Resume");
 
         System.out.println();
-        System.out.println("Please enter 0-8: ");
+        System.out.println("Please enter 0-9: ");
 
         String result = input.nextLine();
         return result;

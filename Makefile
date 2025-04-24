@@ -21,3 +21,6 @@ JobOpening.class: JobOpening.java HasMenu.class
 
 run:
 	java JobApplication
+
+clean:
+	rm *.class
